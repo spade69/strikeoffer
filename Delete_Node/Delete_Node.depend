@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1461811414 source:d:\mycprj\strike_offer\delete_node\listnode.cpp
+	"ListNode.h"
+
+1461809722 d:\mycprj\strike_offer\delete_node\listnode.h
+	<iostream>
+
+1461811370 source:d:\mycprj\strike_offer\delete_node\main.cpp
+	<iostream>
+	"ListNode.h"
+
