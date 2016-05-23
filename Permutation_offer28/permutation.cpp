@@ -1,6 +1,8 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<algorithm>
+
 using namespace std;
 
 
@@ -20,6 +22,7 @@ void per_core(string& str,char* begin,vector<string>& result)
         string bstr;
         bstr.assign(str);
 
+        if((*begin!=*p)||(p==begin)){
         char tmp=*p;
         *p=*begin;
         *begin=tmp;
@@ -29,7 +32,7 @@ void per_core(string& str,char* begin,vector<string>& result)
         tmp=*p;
         *p=*begin;
         *begin=tmp;
-
+        }
 
     }
 
@@ -44,6 +47,8 @@ vector<string> Permutation(string str)
 
     char *begin=&str[0];
     per_core(str,begin,result);
+
+    sort(result.begin(),result.end());//algorithm
     return result;
 }
 
