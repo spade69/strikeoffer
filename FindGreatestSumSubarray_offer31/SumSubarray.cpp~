@@ -1,0 +1,51 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+
+int FindGreatestSumOfSubArray(vector<int>& array){
+
+    if(array.empty())
+    {
+        cout<<"Your array is empty!"<<endl;
+        return 0;
+    }
+
+    vector<int>::iterator iter=array.begin();
+    int sum=0;
+    int tmp=0;
+    int max=0;
+    for(;iter!=array.end();iter++){
+        if(sum<=0)
+        {
+            sum=*iter;
+        //    tmp=sum;
+        }
+
+        else{
+        tmp=sum;
+        sum+=*iter;
+        }
+
+        if(sum<max&&sum>0){
+            max=tmp;
+
+        }
+        else{
+            max=sum;
+
+        }
+
+    }//for
+    return max;
+}
+
+int main(){
+    int a[8]={1,-2,3,10,-4,7,2,-5};
+    int b[5]={-2,-8,-5,-1,-9};
+    vector<int> arr(b,b+8);
+    int max=0;
+    max=FindGreatestSumOfSubArray(arr);
+    cout<<"max:"<<max<<endl;
+    return 0;
+}
