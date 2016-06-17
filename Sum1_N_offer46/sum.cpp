@@ -55,6 +55,7 @@ int Sum_Solution3(int n)
 {
     int ans=n;
     //using && replace the function of if else
+    //Because if false && only caculate A of  A&&b judgement
     ans&&(ans+=Sum_Solution3(n-1));
     return ans;
 
