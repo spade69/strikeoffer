@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string.h>
+#include<string>
+using namespace std;
+//Convert a string to int
+//eg: "123" -> 123
+//
+//Special: "-123" --> -123
+//0 means empty or '0'
+//Author:Jason
+//Date: 2016/6/20
+
+int StrToInt(string str)
+{
+    if(str.empty())
+        return 0;
+    char *p=&str[0];
+    //High--> low  "123" str[0] str[1] str[2]
+    int result;
+    int len=str.size();//len doesn't contain '\0' but sizeof() contains
+    int sum=0;
+    int tmp=0;
+    char sig=*p;
+    for(int i=0;i<len;i++)
+    {
+        if(!(str[i]>='0'&&str[i]<='9'||str[0]=='+'||str[0]=='-'))
+            return 0;
+    }
+
+    if(*p=='+'||*p=='-')
+        p++;
+
+    while(*p!='\0'){
+        sum=10*tmp+(*p-'0');
+        p++;
+        tmp=sum;
+    }
+    if(sig=='-')
+    result=(-1)*sum;
+    else
+    result=sum;
+    return result;
+}
+
+int main(){
+    string str("123");
+    char *p=&str[0];
+    int result=0;
+    result=StrToInt(str);
+    cout<<result<<endl;
+    return 0;
+}
