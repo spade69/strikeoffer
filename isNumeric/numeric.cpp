@@ -81,6 +81,7 @@ bool isNumeric(char* string)
        if(string[i]>='0'&&string[i]<='9')
            i++;
        else if(string[i]=='.'){
+           //if before meet ., meet e||E then is illegal
            if(nume>0)
                return false;
            dot++;
