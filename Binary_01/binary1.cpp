@@ -18,7 +18,7 @@ struct TreeLinkNode{
     struct TreeLink* parent;
     TreeLinkNode(int x):val(x),left(NULL),right(NULL),parent(NULL){
     }
-}
+};
 
 TreeLinkNode* GetNext(TreeLinkNode* pNode){
     if(pNode==NULL)
