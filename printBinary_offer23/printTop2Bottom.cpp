@@ -7,6 +7,8 @@ using namespace std;
 /*************************
 *
 Function: Print Binary Tree from top to bottom.
+Similarly to PrintNodeByLevel.
+
 Input: One Binary Tree
 Output:Print A sequence;
 Return : A sequence store in vector<int>
