@@ -43,3 +43,21 @@ void PrintTree(TreeNode *T)
 }
 
 
+TreeNode* AddNode(TreeNode *origin,int x)
+{
+	TreeNode *s=new TreeNode(x);
+
+
+	if(x<origin->val)
+	{
+		origin->left=AddNode(origin->left,x);
+	}
+
+	else if(x>origin->val)
+	{
+		origin->right=AddNode(origin->right,x);
+	}
+	return origin;
+}
+
+
